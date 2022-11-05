@@ -24,9 +24,14 @@ require 'configue DB.php';
     echo '<ul>';
     $query = $pdo->query('SELECT * FROM `tasks` ORDER BY `id` DESC');
     while($row = $query->fetch(PDO::FETCH_OBJ)) {
-        echo '<li><b>'. $row->task .'</b><a href="/delete.php?id='.$row->id.'"><button>Удалить</button><input type="checkbox"></a></li>';
+        echo '<li><b>'. $row->task .'</b><a href="/delete.php?id='.$row->id.'"><button>Удалить</button></a> <div class="squaredFour">
+	<input type="checkbox" value="None" id="squaredFour" name="check" />
+	<label for="squaredFour"></label>
+</div></li>';
+
     }
     echo '</ul>';
+
 ?>
 
 </body>
